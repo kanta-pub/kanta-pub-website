@@ -12,8 +12,8 @@ const WriteAndPublish = ({ writePublishes }) => {
 
       {/* Write and Publish Section */}
       <div className="w-full rounded-lg px-5 md:px-10 lg:px-32 py-10">
-      {writePublishes.length > 0 ? (
-  writePublishes.map((item, index) => (
+      {writePublishes?.length > 0 ? (
+  writePublishes?.map((item, index) => (
     <div
       key={index}
       className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 border-b border-gray-300 pb-5 mb-5"

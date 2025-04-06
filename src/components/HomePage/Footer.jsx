@@ -1,9 +1,11 @@
+'use client';
 import React from "react";
 import Link from "next/link";
 import { FaInstagram, FaTwitter, FaYoutube, FaPinterest } from "react-icons/fa";
+import { signOut } from "next-auth/react";
 
 const Footer = ({user}) => {
-  console.log(user)
+  // console.log(user)
   return (
     <footer className="bg-gray-900 text-gray-200 py-8 mt-5">
       {/* Logo and Social Media Section */}
@@ -26,7 +28,14 @@ const Footer = ({user}) => {
           <div className="ml-3">
             <h1 className="text-2xl font-bold text-orange-500">
             {user ? (
-  <span>Kanta Publication</span>
+  <span className="">Kanta Publication
+    <button
+                    onClick={() => signOut()} // ✅ Step 3: Call signOut
+                    className="text-sm px-4 py-1 bg-red-500 hover:bg-red-600 text-white rounded-lg transition ml-5"
+                  >
+                    Logout
+                  </button>
+  </span>
 ) : (
   <Link href="/login">Kanta Publication</Link>
 )}
